@@ -47,20 +47,9 @@ for (int columna = 0; columna < lengthColumnas; columna++)
         Console.WriteLine(numeros[fila, columna]);
         Console.WriteLine();
     }
-
 }
 
-//Mostramos la matriz
-Console.WriteLine("La matriz es la siguiente:");
-for (int fila = 0; fila < lengthFilas; fila++)
-{
-    for(int columna = 0; columna < lengthColumnas; columna++)
-    
-    {
-        Console.Write("{0} ", numeros[fila, columna]);
-    }
-    Console.WriteLine();
-}
+
 // Ciclo for para calculo de promedios por columna y muestra de valores promedios.
 
 for (int columna = 0; columna < lengthColumnas; columna++)
@@ -72,14 +61,29 @@ for (int columna = 0; columna < lengthColumnas; columna++)
     double suma = 0;
     for (int fila = 0; fila < lengthFilas; fila++)
     {
-        suma = suma + numeros[fila, columna];
-            
+        suma = suma + numeros[fila, columna];   
     }
 valor = suma / lengthFilas;
 promedios[columna] = valor;
 Console.WriteLine($"El promedio de la columna ({columna + 1}/{lengthColumnas}) es {promedios[columna]}");
+}
 
+Console.WriteLine();
+//Mostramos la matriz
+Console.WriteLine("La matriz es la siguiente, la ultima fila corresponde al promedio de cada columna");
+for (int fila = 0; fila < lengthFilas; fila++)
+{
+    for(int columna = 0; columna < lengthColumnas; columna++)
+    {
+        Console.Write("{0} ", numeros[fila, columna]);
+    }
+    Console.WriteLine();
+}
+Console.WriteLine("----");
 
+for(int i = 0; i < cantColumnas; i++)
+{
+    Console.Write("{0} ",promedios[i]);
 }
 
 Console.ReadKey();
